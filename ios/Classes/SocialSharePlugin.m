@@ -124,7 +124,7 @@
 
 - (void)facebookShare:(NSString*)imagePath {
     //NSURL* path = [[NSURL alloc] initWithString:call.arguments[@"path"]];
-    FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
+    FBSDKSharePhoto *photo = FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:imagePath] isUserGenerated:YES];
     photo.image = [[UIImage alloc] initWithContentsOfFile:imagePath];
     FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
     content.photos = @[photo];
